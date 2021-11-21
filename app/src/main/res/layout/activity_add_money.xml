@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/addmoney"
+    tools:context=".AddMoneyActivity">
+
+    <TextView
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="5dp"
+        android:text="  /  /    "
+        android:textColor="#170038"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <Button
+        android:id="@+id/addBtn3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btnadd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/misahorrosBtn3"
+        android:layout_width="60dp"
+        android:layout_height="50.02dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/btnmisahorros"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addBtn3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/logoutBtn3"
+        android:layout_width="68dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/btncerrarsesion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addBtn3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="155.16dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/textcantidad2" />
+
+    <TextView
+        android:id="@+id/cantText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="5dp"
+        android:text="$       "
+        android:textColor="#170038"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="110.62dp"
+        android:layout_height="22.13dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cantText"
+        app:srcCompat="@drawable/textfecha2" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="150.22dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateText"
+        app:srcCompat="@drawable/textcantmoney" />
+
+    <EditText
+        android:id="@+id/addCantImput"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/imputcantidad2"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/accepBtn"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/btnaccept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addCantImput"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/nameSaving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="31dp"
+        android:text="Nombre ahorro"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,10 +5,12 @@
       <map>
         <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/drawable/activebtn.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/drawable/noactivebtn.xml" value="0.16944444444444445" />
+        <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/layout/activity_add_money.xml" value="0.264" />
         <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/layout/activity_create.xml" value="0.264" />
         <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/layout/activity_init.xml" value="0.264" />
         <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/layout/activity_my_saving.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/erika/AndroidStudioProjects/ECO_ProyectoParcial2_Android/app/src/main/res/layout/activity_register.xml" value="0.264" />
       </map>
     </option>

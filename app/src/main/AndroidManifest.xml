@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ECO_ProyectoParcial2_Android">
         <activity
+            android:name=".AddMoneyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MySavingActivity"
+            android:exported="true" />
+        <activity
             android:name=".CreateActivity"
             android:exported="true" />
         <activity
