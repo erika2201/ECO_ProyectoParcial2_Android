@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/crearahorro"
+    tools:context=".CreateActivity" >
+
+    <Button
+        android:id="@+id/misahorrosBtn2"
+        android:layout_width="60dp"
+        android:layout_height="50.02dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/btnmisahorros2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addBtn2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/addBtn2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/btnadd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/logoutBtn2"
+        android:layout_width="68dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/btncerrarsesion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addBtn2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="53.16dp"
+        android:layout_height="46.68dp"
+        app:layout_constraintBottom_toBottomOf="@+id/goalName"
+        app:layout_constraintEnd_toStartOf="@+id/goalName"
+        app:srcCompat="@drawable/moneditas" />
+
+    <EditText
+        android:id="@+id/goalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:hint="Nueva meta"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="23dp"
+        android:layout_height="27.15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/goalName"
+        app:layout_constraintStart_toEndOf="@+id/goalName"
+        app:srcCompat="@drawable/lapiz" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="155.16dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goalName"
+        app:srcCompat="@drawable/textcantidad" />
+
+    <EditText
+        android:id="@+id/cantImput"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/imputcantidad"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingLeft="25dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/dateImput"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/imput2"
+        android:ems="10"
+        android:hint="DD/MM/AAAA"
+        android:inputType="date"
+        android:paddingLeft="25dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="110.62dp"
+        android:layout_height="22.13dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cantImput"
+        app:srcCompat="@drawable/textfecha" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="180.55dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateImput"
+        app:srcCompat="@drawable/textfrecuencia" />
+
+    <Button
+        android:id="@+id/dailyBtn"
+        android:layout_width="98.08dp"
+        android:layout_height="32.37dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/noactivebtn"
+        android:text="Diario"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <Button
+        android:id="@+id/weeklyBtn"
+        android:layout_width="98.08dp"
+        android:layout_height="32.37dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/noactivebtn"
+        android:text="Semanal"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/dailyBtn"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <Button
+        android:id="@+id/monthlyBtn"
+        android:layout_width="98.08dp"
+        android:layout_height="32.37dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/noactivebtn"
+        android:text="Mensual"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/weeklyBtn"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="131.27dp"
+        android:layout_height="55.59dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/btncrearahorro"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/addBtn2"
+        app:layout_constraintEnd_toEndOf="@+id/monthlyBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
