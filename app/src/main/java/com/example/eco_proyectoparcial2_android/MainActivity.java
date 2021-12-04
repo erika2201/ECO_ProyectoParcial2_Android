@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 (v) ->{
                     Intent i = new Intent(this, RegisterActivity.class);
                     startActivity(i);
+                    finish();
                 });
 
         //De Main a Init
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 (v) ->{
                     Intent i = new Intent(this, InitActivity.class);
                     startActivity(i);
+                    finish();
                 });
     }
 }
