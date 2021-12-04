@@ -20,10 +20,19 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         loginText = findViewById(R.id.loginText);
+        registerBtn = findViewById(R.id.registerBtn);
 
 
-        //De Register a main
+        //De Register a main (iniciar sesion)
         loginText.setOnClickListener(
+                (v) ->{
+                    Intent i = new Intent(this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                });
+
+        //De Register a init (donde comienza a crear todo)
+        registerBtn.setOnClickListener(
                 (v) ->{
                     Intent i = new Intent(this, MainActivity.class);
                     startActivity(i);
