@@ -24,7 +24,7 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/imput"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="Correo"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:textColor="#170038"
