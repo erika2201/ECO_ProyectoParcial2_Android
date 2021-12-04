@@ -22,6 +22,7 @@ public class CreateActivity extends AppCompatActivity {
                 (v) ->{
                     Intent i = new Intent(this, MySavingActivity.class);
                     startActivity(i);
+                    finish();
                 });
     }
 }

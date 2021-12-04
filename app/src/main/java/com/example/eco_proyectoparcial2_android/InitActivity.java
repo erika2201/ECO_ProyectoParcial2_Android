@@ -22,6 +22,7 @@ public class InitActivity extends AppCompatActivity {
                 (v) ->{
                     Intent i = new Intent(this, CreateActivity.class);
                     startActivity(i);
+                    finish();
                 });
     }
 }
