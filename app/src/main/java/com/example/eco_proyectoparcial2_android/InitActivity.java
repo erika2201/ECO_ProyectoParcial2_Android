@@ -16,11 +16,21 @@ public class InitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_init);
 
         addBtn = findViewById(R.id.addBtn);
+        misahorrosBtn = findViewById(R.id.misahorrosBtn);
+        logoutBtn = findViewById(R.id.logoutBtn);
 
         //De Init a Create
         addBtn.setOnClickListener(
                 (v) ->{
                     Intent i = new Intent(this, CreateActivity.class);
+                    startActivity(i);
+                    finish();
+                });
+
+        //De Init a my saving (la lista beia de ahorros)
+        misahorrosBtn.setOnClickListener(
+                (v) ->{
+                    Intent i = new Intent(this, MySavingActivity.class);
                     startActivity(i);
                     finish();
                 });

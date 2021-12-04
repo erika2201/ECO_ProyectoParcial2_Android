@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,9 +20,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        userImput = findViewById(R.id.userImput);
+        passwordImput = findViewById(R.id.passwordImput);
         registerText = findViewById(R.id.registerText);
         loginBtn = findViewById(R.id.loginBtn);
 
+        login();
 
         //De Main a Register
         registerText.setOnClickListener(
@@ -30,13 +34,26 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(i);
                     finish();
                 });
+    }
 
+    public void login(){
         //De Main a Init
-       loginBtn.setOnClickListener(
+        loginBtn.setOnClickListener(
                 (v) ->{
-                    Intent i = new Intent(this, InitActivity.class);
-                    startActivity(i);
-                    finish();
+
+                    String user = userImput.getText().toString();
+                    String password = passwordImput.getText().toString();
+
+                    if(user==null || password==null || user.isEmpty() || password.isEmpty()){
+                        Toast.makeText(this, "Ingresa todos los datos", Toast.LENGTH_SHORT).show(); //mensaje cuando deja algo vacio
+                    }else {
+                        Intent i = new Intent(this, InitActivity.class);
+                        i.putExtra("user", user);
+                        i.putExtra("password", password);
+                        startActivity(i);
+                        finish();
+                    }
                 });
     }
+
 }
