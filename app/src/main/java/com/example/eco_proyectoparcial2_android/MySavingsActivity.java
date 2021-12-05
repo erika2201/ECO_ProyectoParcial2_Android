@@ -26,8 +26,7 @@ public class MySavingsActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseDatabase db;
     private ListView list;
-    private ArrayList<Saving> dataSaving;
-    private ArrayAdapter<Saving>adapter;
+    private AdapterSaving adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +40,8 @@ public class MySavingsActivity extends AppCompatActivity {
         logoutBtn = findViewById(R.id.logoutBtn);
 
         list = findViewById(R.id.list);
-        dataSaving = new ArrayList<>();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataSaving);
+
+        adapter = new AdapterSaving();
         list.setAdapter(adapter);
 
         //De Init a Create
@@ -73,9 +72,8 @@ public class MySavingsActivity extends AppCompatActivity {
             if(snapshot.getValue()==null){
             bg.setBackgroundResource(R.drawable.misahorros);
             }else{
-                loadSaving();
                 bg.setBackgroundResource(R.drawable.listaahorros);
-
+                loadSaving();
             }
             }
 
@@ -91,10 +89,10 @@ public class MySavingsActivity extends AppCompatActivity {
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot data) {
-                dataSaving.clear();
+                adapter.clear();
               for(DataSnapshot child : data.getChildren()){
-                  Saving savingN = child.getValue(Saving.class);
-                  dataSaving.add(savingN);
+                  Saving saving = child.getValue(Saving.class);
+                  adapter.addSaving(saving);
               }
                   adapter.notifyDataSetChanged();
             }
