@@ -2,15 +2,25 @@ package com.example.eco_proyectoparcial2_android;
 
 public class Saving {
     private String name;
+    private String cant;
     private String date;
     private String freq;
 
     public Saving() {}
 
-    public Saving(String name, String date, String freq) {
+    public Saving(String name, String cant, String date, String freq) {
         this.name = name;
+        this.cant = cant;
         this.date = date;
         this.freq = freq;
+    }
+
+    public String getCant() {
+        return cant;
+    }
+
+    public void setCant(String cant) {
+        this.cant = cant;
     }
 
     public String getName() {
