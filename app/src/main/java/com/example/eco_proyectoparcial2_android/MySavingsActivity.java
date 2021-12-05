@@ -6,7 +6,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -15,12 +17,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class MySavingsActivity extends AppCompatActivity {
 
     private Button addBtn, misahorrosBtn, logoutBtn;
     private ConstraintLayout bg;
     private FirebaseAuth auth;
     private FirebaseDatabase db;
+    private ListView list;
+    private ArrayList<Saving> dataSaving;
+    private ArrayAdapter<Saving>adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,11 @@ public class MySavingsActivity extends AppCompatActivity {
         bg = findViewById(R.id.bg);
         misahorrosBtn = findViewById(R.id.misahorrosBtn);
         logoutBtn = findViewById(R.id.logoutBtn);
+
+        list = findViewById(R.id.list);
+        dataSaving = new ArrayList<>();
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataSaving);
+        list.setAdapter(adapter);
 
         //De Init a Create
         addBtn.setOnClickListener(
@@ -61,12 +73,34 @@ public class MySavingsActivity extends AppCompatActivity {
             if(snapshot.getValue()==null){
             bg.setBackgroundResource(R.drawable.misahorros);
             }else{
+                loadSaving();
                 bg.setBackgroundResource(R.drawable.listaahorros);
+
             }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    protected void loadSaving(){
+        DatabaseReference dbref = db.getReference("users/"+auth.getCurrentUser().getUid()+"/ahorros/");
+        dbref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot data) {
+                dataSaving.clear();
+              for(DataSnapshot child : data.getChildren()){
+                  Saving savingN = child.getValue(Saving.class);
+                  dataSaving.add(savingN);
+              }
+                  adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
 
             }
         });

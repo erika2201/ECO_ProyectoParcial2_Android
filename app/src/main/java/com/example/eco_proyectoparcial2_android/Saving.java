@@ -1,5 +1,7 @@
 package com.example.eco_proyectoparcial2_android;
 
+import androidx.annotation.NonNull;
+
 public class Saving {
     private String name;
     private String cant;
@@ -45,5 +47,10 @@ public class Saving {
 
     public void setFreq(String freq) {
         this.freq = freq;
+    }
+
+    @Override
+    public String toString() {
+        return name+ " " +cant+ "\n" +date+ "\n" +freq;
     }
 }
