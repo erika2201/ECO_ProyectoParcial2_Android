@@ -9,17 +9,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText userImput, passwordImput;
     private TextView registerText;
     private Button loginBtn;
 
+    private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        auth = FirebaseAuth.getInstance();
         userImput = findViewById(R.id.userImput);
         passwordImput = findViewById(R.id.passwordImput);
         registerText = findViewById(R.id.registerText);
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void login(){
-        //De Main a Init
+        //De login a Init
         loginBtn.setOnClickListener(
                 (v) ->{
 
@@ -47,11 +50,20 @@ public class MainActivity extends AppCompatActivity {
                     if(user==null || password==null || user.isEmpty() || password.isEmpty()){
                         Toast.makeText(this, "Ingresa todos los datos", Toast.LENGTH_SHORT).show(); //mensaje cuando deja algo vacio
                     }else {
-                        Intent i = new Intent(this, InitActivity.class);
+                        auth.signInWithEmailAndPassword(user,password)
+                                .addOnCompleteListener((task)->{
+                                 if(task.isSuccessful()){
+                            Intent i = new Intent(this, InitActivity.class);
                         i.putExtra("user", user);
                         i.putExtra("password", password);
                         startActivity(i);
                         finish();
+                                 }else{
+                                     Toast.makeText(this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                 }
+                                });
+
+
                     }
                 });
     }
