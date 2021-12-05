@@ -85,7 +85,7 @@
         app:srcCompat="@drawable/textcantidad" />
 
     <EditText
-        android:id="@+id/cantImput"
+        android:id="@+id/cantInput"
         android:layout_width="354dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
@@ -100,7 +100,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/dateImput"
+        android:id="@+id/dateInput"
         android:layout_width="354dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
@@ -124,7 +124,7 @@
         android:layout_marginStart="31dp"
         android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cantImput"
+        app:layout_constraintTop_toBottomOf="@+id/cantInput"
         app:srcCompat="@drawable/textfecha" />
 
     <ImageView
@@ -134,7 +134,7 @@
         android:layout_marginStart="31dp"
         android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateImput"
+        app:layout_constraintTop_toBottomOf="@+id/dateInput"
         app:srcCompat="@drawable/textfrecuencia" />
 
     <Button
