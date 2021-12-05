@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText userImput, passwordImput;
     private TextView registerText;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         auth = FirebaseAuth.getInstance();
         userImput = findViewById(R.id.userImput);
         passwordImput = findViewById(R.id.passwordImput);
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+
+
     public void login(){
         //De login a Init
         loginBtn.setOnClickListener(
@@ -53,9 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         auth.signInWithEmailAndPassword(user,password)
                                 .addOnCompleteListener((task)->{
                                  if(task.isSuccessful()){
-                            Intent i = new Intent(this, InitActivity.class);
-                        i.putExtra("user", user);
-                        i.putExtra("password", password);
+                            Intent i = new Intent(this, MySavingsActivity.class);
                         startActivity(i);
                         finish();
                                  }else{

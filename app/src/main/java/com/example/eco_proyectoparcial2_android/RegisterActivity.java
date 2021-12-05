@@ -1,6 +1,5 @@
 package com.example.eco_proyectoparcial2_android;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,9 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,14 +40,14 @@ public class RegisterActivity extends AppCompatActivity {
         //De Register a main (iniciar sesion)
         loginText.setOnClickListener(
                 (v) ->{
-                    Intent i = new Intent(this, MainActivity.class);
+                    Intent i = new Intent(this, LoginActivity.class);
                     startActivity(i);
                     finish();
                 });
     }
 
     public void register(){
-        //De Register a init (donde comienza a crear todo)
+        //De Register a init (donde comienza a crear el ahorrito)
         registerBtn.setOnClickListener(
                 (v) ->{
                     String name = nameImput.getText().toString();
@@ -74,10 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         DatabaseReference dbRef = db.getReference("users/"+id);
                                         dbRef.setValue(u).addOnCompleteListener((task2) -> {
                                             if(task2.isSuccessful()){
-                                                Intent i = new Intent(this, InitActivity.class);
-                                                i.putExtra("name", name);
-                                                i.putExtra("user2", user);
-                                                i.putExtra("password2", password);
+                                                Intent i = new Intent(this, MySavingsActivity.class);
                                                 startActivity(i);
                                                 finish();
                                             }
