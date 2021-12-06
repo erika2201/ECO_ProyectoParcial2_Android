@@ -36,19 +36,19 @@ public class AdapterSaving extends ArrayAdapter {
         TextView cantRow = rowView.findViewById(R.id.cantRow);
         TextView dateRow = rowView.findViewById(R.id.dateRow);
         TextView frecRow = rowView.findViewById(R.id.frecRow);
-        //Button progressBtn = rowView.findViewById(R.id.progressBtn);
+        Button progressBtn = rowView.findViewById(R.id.progressBtn);
 
         nameRow.setText(saving.getName());
         cantRow.setText(saving.getCant());
         dateRow.setText(saving.getDate());
         frecRow.setText(saving.getFreq());
 
-        /*progressBtn.setOnClickListener(
+        progressBtn.setOnClickListener(
                 (v)->{
                     Intent i = new Intent(list.getContext(), AddMoneyActivity.class);
                     list.getContext().startActivity(i);
                 }
-        );*/
+        );
 
 
         return rowView;
