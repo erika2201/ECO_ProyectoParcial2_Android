@@ -51,6 +51,6 @@ public class Saving {
 
     @Override
     public String toString() {
-        return name+ " " +cant+ "\n" +date+ "\n" +freq;
+        return name+ " " +cant+ " " +date+ " " +freq;
     }
 }

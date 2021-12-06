@@ -1,9 +1,11 @@
 package com.example.eco_proyectoparcial2_android;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,47 +15,20 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class AdapterSaving extends BaseAdapter {
+public class AdapterSaving extends ArrayAdapter {
 
-    //Data
-    private ArrayList<Saving>savings;
-
-    public AdapterSaving() {
-        savings = new ArrayList<>();
-    }
-
-    public void addSaving(Saving saving){
-        savings.add(saving);
-        notifyDataSetChanged();
-    }
-
-    public void clear(){
-        savings.clear();
-        notifyDataSetChanged();
-    }
-
-    @Override //Cuantos ahorros hay
-    public int getCount() {
-        return 0;
-    }
-
-    @Override //Posicion de un ahorro dentro de la lista
-    public Object getItem(int pos) {
-        return savings.get(pos);
-    }
-
-    @Override //El adaptador diferencia entre los elementos
-    public long getItemId(int pos) {
-        return pos;
+    public AdapterSaving(Context context, ArrayList<Saving>savings) {
+        super(context,0,savings);
     }
 
     //La UI beia
     @Override
     public View getView(int pos, View row, ViewGroup list) {
-        LayoutInflater inflater = LayoutInflater.from(list.getContext());
-        View rowView = inflater.inflate(R.layout.row, null);
+        //Clase que hace transfrmación
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        View rowView = inflater.inflate(R.layout.row, list, false);
 
-        Saving saving = savings.get(pos);
+        Saving saving = (Saving) getItem(pos);
 
         //Instancias de los elementos del row
         ImageView imageComp = rowView.findViewById(R.id.imageComp);
@@ -61,19 +36,19 @@ public class AdapterSaving extends BaseAdapter {
         TextView cantRow = rowView.findViewById(R.id.cantRow);
         TextView dateRow = rowView.findViewById(R.id.dateRow);
         TextView frecRow = rowView.findViewById(R.id.frecRow);
-        Button progressBtn = rowView.findViewById(R.id.progressBtn);
+        //Button progressBtn = rowView.findViewById(R.id.progressBtn);
 
         nameRow.setText(saving.getName());
         cantRow.setText(saving.getCant());
         dateRow.setText(saving.getDate());
-       // frecRow.setText(saving.getFreq());
+        frecRow.setText(saving.getFreq());
 
-        progressBtn.setOnClickListener(
+        /*progressBtn.setOnClickListener(
                 (v)->{
                     Intent i = new Intent(list.getContext(), AddMoneyActivity.class);
                     list.getContext().startActivity(i);
                 }
-        );
+        );*/
 
 
         return rowView;
