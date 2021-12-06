@@ -62,19 +62,19 @@ public class CreateActivity extends AppCompatActivity {
             dailyBtn.setBackgroundResource(R.drawable.activebtn);
             weeklyBtn.setBackgroundResource(R.drawable.noactivebtn);
             monthlyBtn.setBackgroundResource(R.drawable.noactivebtn);
-            freq="daily";
+            freq="Diaria";
         });
         weeklyBtn.setOnClickListener((v) ->{
             dailyBtn.setBackgroundResource(R.drawable.noactivebtn);
             weeklyBtn.setBackgroundResource(R.drawable.activebtn);
             monthlyBtn.setBackgroundResource(R.drawable.noactivebtn);
-            freq="weekly";
+            freq="Semanal";
         });
         monthlyBtn.setOnClickListener((v) ->{
             dailyBtn.setBackgroundResource(R.drawable.noactivebtn);
             weeklyBtn.setBackgroundResource(R.drawable.noactivebtn);
             monthlyBtn.setBackgroundResource(R.drawable.activebtn);
-            freq="monthly";
+            freq="Mensual";
         });
     }
 
