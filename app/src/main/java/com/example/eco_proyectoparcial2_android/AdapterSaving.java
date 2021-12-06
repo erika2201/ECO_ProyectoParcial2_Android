@@ -46,6 +46,12 @@ public class AdapterSaving extends ArrayAdapter {
         progressBtn.setOnClickListener(
                 (v)->{
                     Intent i = new Intent(list.getContext(), AddMoneyActivity.class);
+                    String thename = saving.getName();
+                    String theQuant = saving.getCant();
+                    String theDate = saving.getDate();
+                    i.putExtra("name",thename);
+                    i.putExtra("cant",theQuant);
+                    i.putExtra("date",theDate);
                     list.getContext().startActivity(i);
                 }
         );

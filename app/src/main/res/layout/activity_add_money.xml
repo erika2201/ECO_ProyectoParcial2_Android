@@ -88,8 +88,8 @@
         android:id="@+id/imageView12"
         android:layout_width="150.22dp"
         android:layout_height="15dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="84dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateText"
         app:srcCompat="@drawable/textcantmoney" />
