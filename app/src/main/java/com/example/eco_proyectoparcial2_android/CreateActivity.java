@@ -94,7 +94,7 @@ public class CreateActivity extends AppCompatActivity {
                            if(s!=null){
                                Toast.makeText(CreateActivity.this, "Ya existe un ahorro con ese nombre", Toast.LENGTH_SHORT).show();
                            }else{
-                              Saving s1 = new Saving(saveName,saveCant,saveDate,freq);
+                              Saving s1 = new Saving(saveName,saveCant,saveDate,freq,0);
                               dbRef.setValue(s1).addOnCompleteListener((task) -> {
                                   if(task.isSuccessful()){
                                       Intent i = new Intent(CreateActivity.this, MySavingsActivity.class);
