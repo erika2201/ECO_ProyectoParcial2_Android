@@ -54,6 +54,14 @@ public class CreateActivity extends AppCompatActivity {
                     startActivity(i);
                     finish();
                 });
+        //Cerrar sesion
+        logoutBtn2.setOnClickListener(
+                (v) ->{
+                    auth.signOut();
+                    Intent i = new Intent(this, LoginActivity.class);
+                    startActivity(i);
+                    finish();
+                });
     }
 
     //Cambio de color en los botones
@@ -82,38 +90,42 @@ public class CreateActivity extends AppCompatActivity {
     public void createSaving(){
         //De Create a ListaAhorros
         createBtn.setOnClickListener(
-                (v) ->{
+                (v) -> {
                     String saveName = goalName.getText().toString();
                     String saveCant = cantInput.getText().toString();
                     String saveDate = dateInput.getText().toString();
-                    DatabaseReference dbRef = db.getReference("users/"+auth.getCurrentUser().getUid()+"/ahorros/"+saveName);
-                   dbRef.addValueEventListener(new ValueEventListener() {
-                       @Override
-                       public void onDataChange(@NonNull DataSnapshot snapshot) {
-                           Saving s = snapshot.getValue(Saving.class);
-                           if(s!=null){
-                               Toast.makeText(CreateActivity.this, "Ya existe un ahorro con ese nombre", Toast.LENGTH_SHORT).show();
-                           }else{
-                              Saving s1 = new Saving(saveName,saveCant,saveDate,freq,0);
-                              dbRef.setValue(s1).addOnCompleteListener((task) -> {
-                                  if(task.isSuccessful()){
-                                      Intent i = new Intent(CreateActivity.this, MySavingsActivity.class);
-                                      startActivity(i);
-                                      finish();
-                                  }
+                    if (saveName == null || saveCant == null || saveDate == null || saveName.isEmpty() || saveCant.isEmpty() || saveDate.isEmpty()) {
+                        Toast.makeText(this, "Por favor, ingresa todos los datos", Toast.LENGTH_SHORT).show(); //mensaje cuando deja algo vacio
+                    } else {
 
-                                      });
-                           }
-                       }
+                    DatabaseReference dbRef = db.getReference("users/" + auth.getCurrentUser().getUid() + "/ahorros/" + saveName);
+                    dbRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Saving s = snapshot.getValue(Saving.class);
+                            if (s != null) {
+                                Toast.makeText(CreateActivity.this, "Ya existe un ahorro con ese nombre", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Saving s1 = new Saving(saveName, saveCant, saveDate, freq, 0);
+                                dbRef.setValue(s1).addOnCompleteListener((task) -> {
+                                    if (task.isSuccessful()) {
+                                        Intent i = new Intent(CreateActivity.this, MySavingsActivity.class);
+                                        startActivity(i);
+                                        finish();
+                                    }
 
-                       @Override
-                       public void onCancelled(@NonNull DatabaseError error) {
+                                });
+                            }
+                        }
 
-                       }
-                   });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
 
 
-
+                }
 
 
                 });

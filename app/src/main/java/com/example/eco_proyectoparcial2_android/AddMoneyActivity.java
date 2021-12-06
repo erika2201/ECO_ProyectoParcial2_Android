@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AddMoneyActivity extends AppCompatActivity {
 
-    private Button logoutBtn4,accepBtn,misahorrosBtn3;
+    private Button logoutBtn4,accepBtn,misahorrosBtn3,addBtn3;
     private TextView nameSaving,cantText,dateText;
     private EditText addCantImput;
     private FirebaseDatabase db;
@@ -39,6 +39,7 @@ public class AddMoneyActivity extends AppCompatActivity {
         accepBtn = findViewById(R.id.accepBtn);
         logoutBtn4 = findViewById(R.id.logoutBtn4);
         misahorrosBtn3 = findViewById(R.id.misahorrosBtn3);
+        addBtn3 = findViewById(R.id.addBtn3);
 
 
         String savename = getIntent().getExtras().getString("name");
@@ -48,6 +49,30 @@ public class AddMoneyActivity extends AppCompatActivity {
         cantText.setText(savecant);
         dateText.setText(savedate);
         addProgress();
+
+        //De Add Money a Create
+        addBtn3.setOnClickListener(
+                (v) ->{
+                    Intent i = new Intent(this, CreateActivity.class);
+                    startActivity(i);
+                    finish();
+                });
+
+        //Cerrar sesion
+        logoutBtn4.setOnClickListener(
+                (v) ->{
+                    auth.signOut();
+                    Intent i = new Intent(this, LoginActivity.class);
+                    startActivity(i);
+                    finish();
+                });
+        //De Add Money a my savings (la lista beia de ahorros)
+        misahorrosBtn3.setOnClickListener(
+                (v) ->{
+                    Intent i = new Intent(this, MySavingsActivity.class);
+                    startActivity(i);
+                    finish();
+                });
     }
 
     private void addProgress() {

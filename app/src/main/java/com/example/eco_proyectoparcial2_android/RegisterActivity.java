@@ -54,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
                     String user = userImput2.getText().toString();
                     String password = passwordImput2.getText().toString();
                     if(name==null || user==null || password==null || name.isEmpty() || user.isEmpty() || password.isEmpty()){
-                        Toast.makeText(this, "Ingresa todos los datos", Toast.LENGTH_SHORT).show(); //mensaje cuando deja algo vacio
+                        Toast.makeText(this, "Por favor, ingresa todos los datos", Toast.LENGTH_SHORT).show(); //mensaje cuando deja algo vacio
                     }else{
                         auth.createUserWithEmailAndPassword(user,password)
                                 .addOnCompleteListener((task) ->{

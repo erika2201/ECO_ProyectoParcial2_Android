@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     String password = passwordImput.getText().toString();
 
                     if(user==null || password==null || user.isEmpty() || password.isEmpty()){
-                        Toast.makeText(this, "Ingresa todos los datos", Toast.LENGTH_SHORT).show(); //mensaje cuando deja algo vacio
+                        Toast.makeText(this, "Por favor, ingresa todos los datos", Toast.LENGTH_SHORT).show(); //mensaje cuando deja algo vacio
                     }else {
                         auth.signInWithEmailAndPassword(user,password)
                                 .addOnCompleteListener((task)->{
